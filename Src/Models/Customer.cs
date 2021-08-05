@@ -1,5 +1,5 @@
 ﻿using System;
-namespace CrashCourse2020ExercisesDayThree.Src.Models
+namespace CrashCourse2021ExercisesDayThree.Models
 {
     public class Customer
     {

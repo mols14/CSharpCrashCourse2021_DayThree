@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
-using CrashCourse2020ExercisesDayThree.Src.Models;
+using CrashCourse2021ExercisesDayThree.Models;
 
-namespace CrashCourse2020ExercisesDayThree.Src.DB
+namespace CrashCourse2021ExercisesDayThree.DB.Impl
 {
     public class CustomerTable
     {

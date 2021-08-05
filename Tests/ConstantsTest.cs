@@ -1,8 +1,6 @@
-﻿using System;
-using CrashCourse2020ExercisesDayThree.Src;
-using Xunit;
+﻿using Xunit;
 
-namespace CrashCourse2020ExercisesDayThree.Tests
+namespace CrashCourse2021ExercisesDayThree.Tests
 {
     public class ConstantsTest
     {

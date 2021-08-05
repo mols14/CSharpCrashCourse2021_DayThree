@@ -1,11 +1,10 @@
 ﻿using System;
 using System.IO;
-using CrashCourse2020ExercisesDayThree.Src;
-using CrashCourse2020ExercisesDayThree.Src.Models;
-using CrashCourse2020ExercisesDayThree.Src.Services;
+using CrashCourse2021ExercisesDayThree.Models;
+using CrashCourse2021ExercisesDayThree.Services;
 using Xunit;
 
-namespace CrashCourse2020ExercisesDayThree.Tests.Services
+namespace CrashCourse2021ExercisesDayThree.Tests.Services
 {
     public class CustomerServiceTest
     {

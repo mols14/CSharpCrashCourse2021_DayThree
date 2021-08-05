@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using CrashCourse2020ExercisesDayThree.Src.DB;
-using CrashCourse2020ExercisesDayThree.Src.Models;
+using CrashCourse2021ExercisesDayThree.DB.Impl;
+using CrashCourse2021ExercisesDayThree.Models;
 
-namespace CrashCourse2020ExercisesDayThree.Src.Services
+namespace CrashCourse2021ExercisesDayThree.Services
 {
     public class CustomerService
     {
