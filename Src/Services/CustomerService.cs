@@ -7,7 +7,8 @@ namespace CrashCourse2021ExercisesDayThree.Services
 {
     public class CustomerService
     {
-        CustomerTable db; 
+        CustomerTable db;
+
         public CustomerService()
         {
             this.db = new CustomerTable();
@@ -16,7 +17,11 @@ namespace CrashCourse2021ExercisesDayThree.Services
         //Create and return a Customer Object with all incoming properties (no ID)
         internal Customer Create(string firstName, string lastName, DateTime birthDate)
         {
-            throw new NotImplementedException();
+            Customer customer = new Customer()
+            {
+                
+                    
+            }
         }
 
         //db has an Add function to add a new customer!! :D
@@ -37,7 +42,7 @@ namespace CrashCourse2021ExercisesDayThree.Services
         {
             throw new NotImplementedException();
         }
-        
+
         /*So many things can go wrong here...
           You need lots of exceptions handling in case of failure and
           a switch statement that decides what property of customer to use
@@ -49,7 +54,23 @@ namespace CrashCourse2021ExercisesDayThree.Services
         */
         public List<Customer> SearchCustomer(string searchField, string searchValue)
         {
-            throw new NotImplementedException();
+            var foundCustomers = new List<Customer>();
+            switch (searchField)
+            {
+                case "Id":
+                {
+                    foreach (var customer in GetCustomers())
+                    {
+                        if (customer.Id.ToString().Equals(searchValue))
+                        {
+                            foundCustomers.Add(customer);
+                        }
+                    }
+                }
+                    break;
+            }
+
+            return foundCustomers;
         }
     }
 }
