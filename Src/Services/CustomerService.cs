@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using CrashCourse2021ExercisesDayThree.DB.Impl;
 using CrashCourse2021ExercisesDayThree.Models;
 
@@ -17,10 +18,17 @@ namespace CrashCourse2021ExercisesDayThree.Services
         //Create and return a Customer Object with all incoming properties (no ID)
         internal Customer Create(string firstName, string lastName, DateTime birthDate)
         {
-            Customer customer = new Customer()
+            if (firstName.Length >= 2)
             {
-                
-                    
+                Customer customer = new Customer();
+                customer.FirstName = firstName;
+                customer.LastName = lastName;
+                customer.BirthDate = birthDate;
+                return customer;
+            }
+            else
+            {
+                throw new ArgumentException(Constants.FirstNameException);
             }
         }
 
@@ -28,19 +36,32 @@ namespace CrashCourse2021ExercisesDayThree.Services
         //We can reuse the Create function above..
         internal Customer CreateAndAdd(string firstName, string lastName, DateTime birthDate)
         {
-            throw new NotImplementedException();
+            Customer customer = new Customer();
+            customer.FirstName = firstName;
+            customer.LastName = lastName;
+            customer.BirthDate = birthDate;
+            db.AddCustomer(customer);
+            return customer;
         }
 
         //Simple enough, Get the customers from the "Database" (db)
         internal List<Customer> GetCustomers()
         {
-            throw new NotImplementedException();
+            return db.GetCustomers();
         }
 
         //Maybe Check out how to find in a LIST in c# Maybe there is a Find function?
         public Customer FindCustomer(int customerId)
         {
-            throw new NotImplementedException();
+            if (customerId < 0)
+            {
+                throw new InvalidDataException(Constants.CustomerIdMustBeAboveZero);
+            }
+            else
+            {
+                List<Customer> customers = GetCustomers();
+                return customers.Find(c => c.Id == customerId);
+            }
         }
 
         /*So many things can go wrong here...
